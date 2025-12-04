@@ -3,7 +3,7 @@
 #include "cow_string.h"
 #include <cstring>
 
-cow_string::cow_string(const char* text) {
+cow_string::cow_string(const char* text) : generic_string(*text) {
   // set up a shareable string for this text; the count will be 1
   underlying_string = new shareable_string(text);
 }
@@ -27,7 +27,7 @@ cow_string::~cow_string() {
 
 }
 
-cow_string::cow_string(const cow_string &src) {
+cow_string::cow_string(const cow_string &src) : generic_string(*src.underlying_string -> contents){
   // TODO: implement the copy constructor. The copy will *share* the
   //       underlying string object, so the count needs to be updated
   //       to reflect that
