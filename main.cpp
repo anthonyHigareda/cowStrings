@@ -14,6 +14,7 @@
 #include <iomanip>
 #include <sstream>
 #include <cassert>
+#include <cstring>
 
 using namespace std;
 
